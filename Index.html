@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Sis 💖</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zeyada&display=swap">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      height: 100vh;
+      background-image: url("https://www.psdgraphics.com/wp-content/uploads/2022/01/white-math-paper-texture.jpg");
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      position: relative;
+      font-family: 'Zeyada', cursive;
+    }
+
+    .paper {
+      background-image: url("https://i0.wp.com/textures.world/wp-content/uploads/2018/10/2-Millimeter-Paper-Background-copy.jpg?ssl=1");
+      background-size: 500px;
+      padding: 20px 30px;
+      box-shadow: 1px 15px 20px rgba(0, 0, 0, 0.4);
+      position: absolute;
+      cursor: grab;
+      user-select: none;
+      font-size: 32px;
+      color: rgb(0, 0, 100);
+      max-width: 280px;
+      border-radius: 10px;
+    }
+
+    .paper img {
+      width: 100%;
+      max-height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    .paper.heart {
+      width: 200px;
+      height: 200px;
+      padding: 0;
+      border-radius: 50%;
+      background: white;
+    }
+
+    .paper.heart::after {
+      content: "";
+      background-image: url('https://cdn-icons-png.flaticon.com/512/833/833472.png');
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-size: 120px;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEART -->
+<div class="paper heart"></div>
+
+<!-- 20 Birthday Notes -->
+
+<div class="paper">
+  <p>Happy Birthday, Sis! 🎂💖</p>
+  <img src="https://via.placeholder.com/300x200?text=Photo+1">
+</div>
+
+<div class="paper">
+  <p>You make our family brighter ✨</p>
+  <img src="https://via.placeholder.com/300x200?text=Photo+2">
+</div>
+
+<div class="paper">
+  <p>Your smile is my favorite 🥹</p>
+  <img src="https://via.placeholder.com/300x200?text=Photo+3">
+</div>
+
+<div class="paper">
+  <p>You are my best friend 💕</p>
+  <img src="https://via.placeholder.com/300x200?text=Photo+4">
+</div>
+
+<div class="paper">
+  <p>Thank you for always caring 🫶</p>
+  <img src="Tablet storage/Pictures/Telegram/IMG_20260121_171611_641.jpg">
+</div>
+
+<div class="paper">
+  <p>I’m lucky to have you 🌸</p>
+  <img src="https://via.placeholder.com/300x200?text=Photo+6">
+</div>
+
+<div class="paper">
+  <p>You make life fun 😄</p>
+  <img src="https://via.placeholder.com/300x200?text=Photo+7">
+</div>
+
+<div class="paper">
+  <p>Always stay happy 💫</p>
+  <img src="https://via.placeholder.com/300x200?text=Photo+8">
+</div>
+
+<div class="paper">
+  <p>You are amazing 🤍</p>
+  <img src="https://via.placeholder.com/300x200?text=Photo+9">
+</div>
+
+<div class="paper">
+  <p>Never stop being you 🌈</p>
+  <img src="https://via.placeholder.com/300x200?text=Photo+10">
+</div>
+
+<div class="paper">
+  <p>You deserve all happiness 🥰</p>
+  <img src="https://via.placeholder.com/300x200?text=Photo+11">
+</div>
+
+<div class="paper">
+  <p>You are my sunshine ☀️</p>
+  <img src="https://via.placeholder.com/300x200?text=Photo+12">
+</div>
+
+<div class="paper">
+  <p>Thanks for all memories 📸</p>
+  <img src="https://via.placeholder.com/300x200?text=Photo+13">
+</div>
+
+<div class="paper">
+  <p>You inspire me 💖</p>
+  <img src="https://via.placeholder.com/300x200?text=Photo+14">
+</div>
+
+<div class="paper">
+  <p>You are precious 💎</p>
+  <img src="https://via.placeholder.com/300x200?text=Photo+15">
+</div>
+
+<div class="paper">
+  <p>I love you so much 😘</p>
+  <img src="https://via.placeholder.com/300x200?text=Photo+16">
+</div>
+
+<div class="paper">
+  <p>You make everything better 🌼</p>
+  <img src="https://via.placeholder.com/300x200?text=Photo+17">
+</div>
+
+<div class="paper">
+  <p>Always be happy 💝</p>
+  <img src="https://via.placeholder.com/300x200?text=Photo+18">
+</div>
+
+<div class="paper">
+  <p>You mean a lot to me 💗</p>
+  <img src="https://via.placeholder.com/300x200?text=Photo+19">
+</div>
+
+<div class="paper">
+  <p>Love you forever, sis 💞</p>
+  <img src="https://photos.app.goo.gl/AC9P3futLMXa7ZNUA">
+</div>
+
+<!-- JavaScript -->
+<script>
+  let highestZ = 1;
+
+  class Paper {
+    constructor(paper) {
+      this.paper = paper;
+      this.offsetX = 0;
+      this.offsetY = 0;
+      this.isDragging = false;
+
+      this.currentX = Math.random() * (window.innerWidth - 300);
+      this.currentY = Math.random() * (window.innerHeight - 300);
+      this.rotation = Math.random() * 20 - 10;
+
+      this.paper.style.transform = `translate(${this.currentX}px, ${this.currentY}px) rotate(${this.rotation}deg)`;
+      this.paper.style.zIndex = highestZ++;
+
+      this.paper.addEventListener("mousedown", this.onMouseDown.bind(this));
+      this.paper.addEventListener("touchstart", this.onTouchStart.bind(this), { passive: false });
+    }
+
+    onMouseDown(e) {
+      e.preventDefault();
+      this.isDragging = true;
+      this.paper.style.zIndex = ++highestZ;
+      this.offsetX = e.clientX - this.currentX;
+      this.offsetY = e.clientY - this.currentY;
+      document.addEventListener("mousemove", this.onMouseMove);
+      document.addEventListener("mouseup", this.onMouseUp);
+    }
+
+    onMouseMove = (e) => {
+      if (!this.isDragging) return;
+      this.currentX = e.clientX - this.offsetX;
+      this.currentY = e.clientY - this.offsetY;
+      this.paper.style.transform = `translate(${this.currentX}px, ${this.currentY}px) rotate(${this.rotation}deg)`;
+    }
+
+    onMouseUp = () => {
+      this.isDragging = false;
+      document.removeEventListener("mousemove", this.onMouseMove);
+      document.removeEventListener("mouseup", this.onMouseUp);
+    }
+
+    onTouchStart(e) {
+      const touch = e.touches[0];
+      this.offsetX = touch.clientX - this.currentX;
+      this.offsetY = touch.clientY - this.currentY;
+      this.paper.style.zIndex = ++highestZ;
+      this.paper.addEventListener("touchmove", this.onTouchMove, { passive: false });
+      this.paper.addEventListener("touchend", this.onTouchEnd);
+    }
+
+    onTouchMove = (e) => {
+      const touch = e.touches[0];
+      this.currentX = touch.clientX - this.offsetX;
+      this.currentY = touch.clientY - this.offsetY;
+      this.paper.style.transform = `translate(${this.currentX}px, ${this.currentY}px) rotate(${this.rotation}deg)`;
+    }
+
+    onTouchEnd = () => {
+      this.paper.removeEventListener("touchmove", this.onTouchMove);
+      this.paper.removeEventListener("touchend", this.onTouchEnd);
+    }
+  }
+
+  document.querySelectorAll(".paper").forEach(p => new Paper(p));
+</script>
+
+</body>
+</html>
